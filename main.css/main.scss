@@ -1,0 +1,1066 @@
+$primaryF: 'Libre Baskerville', sans-serif;
+$secondaryF: 'Montserrat', sans-serif;
+
+$bg-color: rgba(20, 55, 98, 1);
+$hover: rgb(32, 90, 161);
+$light-bg-color: #E3E7EC;
+$accent-color: #EB5749;
+$reg-color: #000000;
+$white-color: #fff;
+$gradient-color: 
+linear-gradient(
+    255.18deg, rgba(245, 106, 0, 0) 6.16%, 
+    rgba(20, 55, 98, 0.1102) 23.99%, 
+    rgba(20, 55, 98, 0.1102) 46.16%, 
+    rgba(245, 106, 0, 0.0841) 70.94%, 
+    rgba(20, 55, 98, 0) 89.2%
+);
+
+$fsz-9: .5rem;
+$fsz-12: .75rem;
+$fsz-14: .875rem;
+$fsz-16: 1rem;
+$fsz-18: 1.125rem;
+$fsz-20: 1.25rem;
+
+
+// ———————————————————————————— BASIC STYLE ————————————————————————————
+   
+html, body, * {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: $secondaryF;
+    overflow-x: hidden;
+    
+
+    // width: 100vw;
+    // height: 100vh;
+}
+body{
+    background: radial-gradient(circle, rgba(238, 174, 202, 0.001) 0%, rgba(148,187,233,0.6054796918767507) 100%);
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    font-family: $secondaryF;
+}
+
+h1,h2,h3,h4,p {
+    margin: 0;
+}
+
+.container {
+    padding: 0 1.2rem;
+
+}
+
+.wrapper-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// ———————————————————————————— HEADER ————————————————————————————
+.header {
+    font-family: $secondaryF;
+    background-color: $bg-color;
+    height: 100px;
+    // width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    &__line{
+        width: 1px;
+        margin-right: .8rem
+    }
+    
+    &__logo--text {
+        color: $white-color;
+        letter-spacing: 1px;
+        font-weight: 900;
+        font-family: $primaryF;
+        
+        span {
+            display: block;
+            font-size: $fsz-14;
+            font-weight: 400;
+            font-family: $secondaryF;
+        }
+    }
+    
+    &__menu--open {
+        height: 1.1rem;
+        cursor: pointer;
+        transition: opacity 70ms ease-in-out;
+    }
+    
+    &__menu--close {
+        cursor: pointer;
+        height: 1.6rem;
+        position: absolute;
+        right: 1.25rem;
+        transform: translateX(1000px);
+    }
+    &__searchbox {display: none;}
+}
+
+// ———————————————————————————— HERO ————————————————————————————
+.hero {
+    font-family: $secondaryF;
+    font-weight: 400;
+    color: $white-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: url(../img/studentbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position-x: center;
+    background-position-y: center;
+    backdrop-filter: blur(100px);
+    width: 100%;
+    height: 250px;
+
+    &__left span{
+        text-transform: uppercase;
+        font-size: $fsz-12;
+        color: rgba(255, 255, 255, .5)
+    }
+
+   
+
+    h1{
+        margin-bottom: .5rem;
+        font-size: $fsz-18;
+    }
+
+    p{
+        font-size: $fsz-14;
+        font-weight: 300;
+        margin-bottom: 4rem;
+    }
+
+    &__list {
+        display: none;
+    }
+
+    &__bullets {
+        display: none;
+    }
+
+    &__right {
+        display: block;
+    }
+
+    a {
+        display: none;
+    }
+}
+
+
+// ———————————————————————————— PHONE SIDEBAR ————————————————————————————
+
+
+.sidebar {
+    transform: translateX(10000px);
+    transition: transform 300ms cubic-bezier(0.21, 0.77, 0.33, 0.98);
+    // transform: translateX(0);
+    // ———————————————————————————— OPEN AND CLOSE MENU TO WATCH ————————————————————————————
+    // ———————————————————————————— OPEN AND CLOSE MENU TO WATCH ————————————————————————————
+    // ———————————————————————————— OPEN AND CLOSE MENU TO WATCH ————————————————————————————
+    margin: 0;
+
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 100px;
+    z-index: 100;
+
+    width: 80%;
+    height: calc(100vh - 100px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background: $bg-color;
+    color: $white-color;
+
+    &__list {
+        padding: 0;
+        margin: 0 auto;
+        color: $reg-color;
+
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__item a{
+        font-size: $fsz-14;
+        color: $white-color;
+        font-weight: 300;
+    }
+
+    &__item--link{
+        color: $accent-color;
+        background: transparent;
+        border: 2px solid $accent-color;
+
+        font-size: $fsz-14;
+        font-weight: 600;
+        
+        padding: 1rem 2.2rem;
+        border-radius: 1.1rem;
+
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .arrow-right{
+            margin-left: 1rem;
+            width: 30px;
+        }
+    }
+
+    &__search {
+        position: relative;
+        background: transparent;
+        font-size: $fsz-14;
+        color: $white-color;
+        
+        padding: 1rem 2.2rem;
+        border: 2px solid $white-color;
+        border-radius: 1.1rem;
+
+        &::placeholder {
+            color: $white-color;
+            text-align: center;
+        }
+        &:active, &:hover, &:focus {
+            outline: none;
+        }
+    }
+
+}
+
+.active {
+    transform: translateX(0);
+}
+
+.not-visible {
+    opacity: 0;
+}
+
+// ———————————————————————————— NAVIGATION ————————————————————————————
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 2rem;
+
+    &__list {
+        margin: 0;
+    }
+
+    &__item {
+       text-align: center;
+       margin-block: 1.875rem;
+    }
+
+
+    &__item a {
+        color: $reg-color;
+
+        font-weight: 400;
+        font-size: $fsz-14;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+// ———————————————————————————— STATS ————————————————————————————
+
+.stats {
+    position: relative;
+    height: 360px;
+    background: $light-bg-color;
+
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(2, minmax(min-content, 300px));
+
+
+ 
+    gap: 50px 30px;
+    padding: 3.125rem 2rem;
+    align-items: center;
+    
+    &__title {
+        font-size: $fsz-20;
+    }
+    
+    &__block {
+        text-align:center;
+    }
+
+    &__content {
+        
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: $fsz-14;
+        // margin-block: .5rem;
+        // text-align: center;
+
+        span {
+            color: $accent-color
+        }
+    }
+
+    &__content--gray{
+        
+        font-size: $fsz-12;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        // text-align: center;
+    }
+  
+}
+
+// ———————————————————————————— BOUND DAYS ————————————————————————————
+
+.days {
+    // margin-inline: 10vw;
+    margin-block: 4em;
+    display: grid;
+
+
+    gap: 16px 30px ;
+
+    grid-template-areas: 
+    'date date'
+    'content img'
+    'content img';
+
+    &__content {
+        grid-area: content;
+        transform: translateY(-15px);
+    }
+    &__content--title {
+        margin-bottom: 1.5rem;
+    }
+    &__img {
+        grid-area: img;
+        align-self: center;
+    }
+    &__date {
+        grid-area: date;
+        transform: translateY(-15px);
+
+        font-weight: 300;
+        font-size: $fsz-12;
+    }
+}
+
+// ———————————————————————————— NEWS ————————————————————————————
+.news {
+    margin-block: 2rem;
+   
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        height: fit-content;
+        column-gap: 30px;
+
+    }
+
+    &__el{
+        // this does not work yet i guess(((; 
+        margin-top: 2.2rem;
+        margin-left: 0;
+
+    }
+
+    &__img {
+        width: 300px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    &__desc {
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-block: .7rem;
+        font-size: $fsz-12
+    }
+
+    
+}
+
+// ———————————————————————————— BUTTONS ————————————————————————————
+.btns {
+
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-weight: 300;
+
+    &__1 {
+        // width: fit-content;
+        padding: .625rem 1.5rem;
+
+        display: inline-block;
+
+        background: $bg-color;
+        color: $white-color;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        transition-property: transform;
+        transition-duration: 200ms;
+
+        &:hover, &:active {
+            background: $accent-color;
+            transform: scale(1.040);
+
+        }
+    }
+
+    
+    &__2 {
+        width: fit-content;
+        padding: .625rem 1.5rem;
+
+        display: inline-block;
+
+        background: $bg-color;
+        color: $white-color;
+        border-radius: 8px;
+        margin-top: 1rem;
+        transition-property: transform;
+        transition-duration: 200ms;
+
+        &:hover, &:active {
+            background: $accent-color;
+            transform: scale(1.040);
+
+        }
+    }
+}
+
+// ———————————————————————————— FOOTER ————————————————————————————
+
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+
+    background: $bg-color;
+    color: $white-color;
+
+    font-weight: 300;
+    font-size: $fsz-12;
+
+    &__desc {
+        padding-block: 1.5rem;
+    }
+
+    &__nav {
+        padding-block: 3rem;
+
+        p{
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+        }
+    }
+
+    &__icons {
+        cursor: pointer;
+    }
+    
+    &__cta {
+
+        .call-icon{
+            margin-bottom: .7rem;
+            cursor: pointer;
+        }
+
+        a{
+            font-size: $fsz-18;
+            padding-bottom: 4rem;
+
+            display: block;
+            color: $white-color;
+        }
+    }
+
+    &__column     {display: none}
+    &__logo-group {display: none}
+    &__logo--desc {display: none}
+}
+
+
+
+@media (min-width: 600px){
+    .container {
+        padding: 0 3rem;
+    }
+
+    .header__menu--close {
+        right: 3.25rem;
+    }
+}
+
+@media (min-width: 750px){
+    .container {
+        padding: 0 6rem;
+    }
+
+    .header__menu--close {
+        right: 6.25rem;
+    }
+}
+
+@media (min-width: 800px){
+    .container {
+        padding: 0 6.25rem;
+    }
+
+    .header__menu--close {
+        right: 6.25rem;
+    }
+}
+
+
+
+@media (min-width: 900px){
+    .container {
+        padding: 0;
+
+    }
+
+    // ———————————————————————————— MEDIA FULL HEADER ————————————————————————————
+    // ———————————————————————————— MEDIA FULL HEADER ————————————————————————————
+    // ———————————————————————————— MEDIA FULL HEADER ————————————————————————————
+  
+    .icon::after {
+        font: var(--fa-font-solid);
+        content: "\f002";
+        color: rgba(0,0,0, .8);
+        font-weight: 700;
+        position: absolute;
+        right: 17px;
+        transition: color 250ms ease-in-out;
+        
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing:antialiased;
+      }
+    
+    .header {
+        // font-family: $secondaryF;
+        // background-color: $bg-color;
+        // width: 100%;
+        // position: relative;
+        // display: flex;
+        // justify-content: space-between;
+        padding: 0 4rem;
+        position: relative;
+        height: 5rem;
+        align-items: center;
+            
+            span {
+                display: inline;
+                color: $white-color;
+                letter-spacing: 1px;
+                font-weight: 400;
+                font-family: inherit;
+                font-size: inherit;
+            }
+        
+        &__menu--open {
+            display: none;
+        }
+        &__menu--close {
+            display: none;
+        }
+// this is just a prototype((( it does not work the way it should be
+        &__searchbox{
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            transition: width 600ms ease 500ms, border-radius 500ms ease;
+
+
+            &:hover, &:active, &:focus {
+                border-radius: .7em;
+                width: 150px;
+                justify-content: space-between;
+            }
+        }
+
+        &__search--input{
+            z-index: 100;
+            background-color: pink;
+            width: 100%;
+
+            border: 0;
+            opacity: 0;
+            padding: 1em 3em 1em 2em;
+            border-radius: 5em;
+            transition: opacity 0s ease, border-radius 500ms;
+
+            &:hover, &:focus {
+                opacity: 1;
+                outline: 0;
+                background-color: rgba(141, 11, 11, 0);
+                border-radius: .7em;
+            }
+
+            &:active {
+                outline: 0;
+            }
+            &::placeholder {
+                font-size: 1.1em;
+            }
+        }
+    }
+  
+    // ———————————————————————————— MEDIA FULL SIDEBAR ————————————————————————————
+    // ———————————————————————————— MEDIA FULL SIDEBAR ————————————————————————————
+    // ———————————————————————————— MEDIA FULL SIDEBAR ————————————————————————————
+
+    .sidebar {
+      
+        padding: 0 4rem;
+        transform: translateX(0);
+        
+        width: 100%;
+        height: 4rem;
+        
+        display: flex;
+        flex-wrap: nowrap;
+        
+        justify-content: center;
+        
+        background: rgb(255, 255, 255);
+        color: black;
+
+        position: static;
+        
+        &__list {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 100%;
+            height: auto;
+            position: static;
+        }
+
+        
+
+        &__item a {
+            font-size: $fsz-14;
+            display: inline-block;
+            color: $reg-color;
+            font-weight: 300;
+            position: static;
+            position: relative;
+            padding: .5em 0;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                height: 3px;
+                border-radius: 10px;
+                background: #EB5749;
+                width: 0%;
+                transition: width 200ms ease-in-out;
+            }
+
+            &:hover{
+                &::after {
+                    width: 100%;
+                }
+            }
+
+
+            // &:hover {
+            // }
+        }
+
+        &
+    
+        &__item--link{display: none;}
+    
+        &__search {display: none;}
+
+        &__searchbar {display: none;}
+    }
+
+    
+
+    // ———————————————————————————— MEDIA FULL HERO ————————————————————————————
+    // ———————————————————————————— MEDIA FULL HERO ————————————————————————————
+    // ———————————————————————————— MEDIA FULL HERO ————————————————————————————
+    .hero {
+        font-family: $secondaryF;
+        font-weight: 400;
+        color: $white-color;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    
+        height: 65vh;
+
+        &__content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 80%;
+            padding-inline: 4em;
+        }
+    
+        &__left {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            
+            h1{
+                margin-bottom: 1.5rem;
+                font-size: 2em;
+            }
+            
+            p {
+                font-size: 1.1em;
+                font-weight: 300;
+            }
+
+            span {
+                font-size: $fsz-12;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color:rgba(255, 255, 255, .6);
+                justify-self: center;
+            }
+
+            a {
+                display: inline-block;
+                width: fit-content;
+
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $accent-color;
+                padding: 1em 2em;
+                border: 2px solid $accent-color;
+                border-radius: .5em;
+                transition: background-color 250ms ease-in-out;
+
+                &:hover {
+                    color: white;
+                    background-color: $accent-color;
+                }
+            }
+        }
+
+        &__right {
+            display: flex;
+            // align-items: center;
+
+            margin: 0;
+            height: 100%;
+            
+            &--group {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-right: 2rem;
+                height: 100%;
+                width: auto;
+
+                text-align: right;
+                font-size: $fsz-14;
+                text-transform: uppercase;
+            }
+
+            &--group a {
+                color: $white-color;
+                font-weight: 300;
+                display: block;
+            }
+        }
+    
+        &__bullets {
+            display: block;
+        }
+    }
+
+
+     // ———————————————————————————— MEDIA FULL STATS ————————————————————————————
+    // ———————————————————————————— MEDIA FULL STATS ————————————————————————————
+    // ———————————————————————————— MEDIA FULL STATS ————————————————————————————
+    .stats {
+        grid-template-columns: repeat(4, minmax(min-content, 300px));
+        gap: 5rem;
+        height: inherit;
+        width: 80%;
+        margin: 3rem auto 5rem;
+        padding: 0;
+        overflow: hidden;
+        background: transparent;
+        &__block *{
+            font-size: .8rem;
+            text-align: left;
+            margin-bottom: 1.2em;
+            &:first-child {margin-bottom: .7em;}
+            &:last-child {margin-bottom: 0;}
+        }
+
+        &__title {
+            font-size: 1.7em;
+        }
+
+        &::after {
+            content: 'our accomplishments';
+            position: absolute;
+            bottom: .5em;
+            width: 100%;
+            line-height: 1.2em;
+            color: rgba(0,0,0, .05);
+            font-size: 4em;
+            font-weight: bold;
+            z-index: -100;
+        }
+
+    }
+
+    .navigation {
+        display: none;
+    }
+
+
+      // ———————————————————————————— MEDIA FULL DAYS ————————————————————————————
+    // ———————————————————————————— MEDIA FULL DAYS ————————————————————————————
+    // ———————————————————————————— MEDIA FULL DAYS ————————————————————————————
+    .days {
+        // margin-inline: 10vw;
+        margin: 0 auto 6rem;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        background: transparent;
+    
+    
+    
+        gap: 40px 60px ;
+    
+        grid-template-areas: 
+        '... img'
+        'content img'
+        'date img';
+    
+        &__content {
+            grid-area: content;
+            width: 100%;
+            p {
+                width: 95%;
+            }
+           
+        }
+        &__content--title {
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        &__img--mob {
+            display: none;
+        }
+
+        &__img {
+            grid-area: img;
+            align-self: center;
+            justify-self: end;
+            margin-left: auto;
+            padding-left: auto;
+            background: url(https://picsum.photos/id/1001/600/300?blur);
+
+            background-size:cover;
+            background-repeat: no-repeat;
+            z-index: 1000;
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+
+      // ———————————————————————————— MEDIA FULL NEWS ————————————————————————————
+    // ———————————————————————————— MEDIA FULL NEWS ————————————————————————————
+    // ———————————————————————————— MEDIA FULL NEWS ————————————————————————————
+    .news {
+        margin: 0 auto;
+        width: 80%;
+       
+        &__scroll {
+            overflow-x: scroll;
+        }
+
+        &__block {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            column-gap: 30px;
+    
+        }
+    
+        &__el{ 
+            margin-top: 3rem;
+            margin-left: 0;
+    
+        }
+    
+        &__img {
+            width: 100%;
+            height: 300px;
+        }
+    
+        &__desc {
+            text-transform: unset;
+            font-weight: 400;
+            margin-block: .7rem;
+            font-size: $fsz-14;
+            width: inherit;
+        }
+    
+        
+    }
+
+    .btns {
+        padding-block: 5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 50%;
+        margin: 0 auto;
+    
+        font-weight: 400;
+        
+    
+        &__1 {
+            margin-bottom: 0;
+            border-radius: .3em;
+        }
+    
+        
+        &__2 {
+            margin-top: 0;
+            border-radius: .3em;
+         
+        }
+    }
+ // ———————————————————————————— MEDIA FULL FOOTER ————————————————————————————
+
+    .footer {
+        padding: 4rem;
+        text-align: left;
+        height: 400px;
+
+        display: flex;
+        justify-content: space-between;
+
+    
+        background: $bg-color;
+        color: $white-color;
+    
+        font-weight: 300;
+        font-size: $fsz-12;
+
+        a {
+            color: $white-color;
+        }
+
+        &__column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 75%;
+        }
+
+        &__logo-group {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            margin-top:  -2.2rem;
+
+            p{
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+
+        &__logo {
+            align-self: center;
+            font-size: 9rem;
+            font-family: $primaryF;
+            font-weight: 700;
+            &--desc {
+                display: block;
+            }
+        }
+        
+        &__desc {
+            padding-block: 0;
+            display: block;
+        }
+        
+        &__cta {
+            display: none;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
